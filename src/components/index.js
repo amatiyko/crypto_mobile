@@ -1,5 +1,5 @@
 import Header from "./Header.js";
-import CryptoContainer from "./CryptoContainer";
 import CoinItem from "./CoinItem";
+import CustomButton from "./CustomButton";
 
-export { Header, CryptoContainer, CoinItem };
+export { Header, CoinItem, CustomButton };
