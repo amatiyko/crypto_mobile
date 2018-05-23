@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import FetchCoinData from "./../Actions/FetchCoinData";
-import CoinItem from "./CoinItem";
+import { CoinItem, CustomButton } from "./../components";
 
 const styles = StyleSheet.create({
     contentContainer: {
@@ -17,7 +17,8 @@ class CryptoContainer extends Component {
     
     render() {
         if (this.props.crypto.data) {
-            let data = this.props.crypto.data;
+            let { crypto , app } = this.props;
+            let data = crypto.data.slice(0, app.itemsToShow);
             return (
                 <ScrollView contentContainerStyle={styles.contentContainer}>
                     {data.map((item, index) => {
@@ -29,6 +30,7 @@ class CryptoContainer extends Component {
                             )
                         }
                     )}
+                    <CustomButton />
                 </ScrollView>
             )
         } else {
@@ -41,8 +43,10 @@ class CryptoContainer extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log('map state to props', state);
     return {
-        crypto: state.crypto
+        crypto: state.crypto,
+        app: state.app
     }
 }
 
