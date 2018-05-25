@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
-import FetchCoinData from "./../Actions/FetchCoinData";
-import ShowMore from "./../Actions/ShowMore"
-import { SHOW_MORE } from './../utils/ActionTypes'
+import { FetchCoinData, ShowMore } from "./../Actions/";
 import { CoinItem, CustomButton } from "./../components";
 
 const styles = StyleSheet.create({

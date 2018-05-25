@@ -5,3 +5,4 @@ export const FETCHING_COIN_DATA_FAIL = 'FETCHING_COIN_DATA_FAIL';
 
 //action types for displaying data
 export const SHOW_MORE = 'SHOW_MORE';
+export const SHOW_LESS = 'SHOW_LESS';
