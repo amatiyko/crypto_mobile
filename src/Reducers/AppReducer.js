@@ -9,6 +9,5 @@ export default function(state=inititalState, action) {
             return Object.assign({}, state, {itemsToShow: state.itemsToShow+10});
         default:
             return state
-    
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, Text, ScrollView, StyleSheet } from 'react-native';
-import FetchCoinData from "./../Actions/FetchCoinData";
+import { FetchCoinData, ShowMore } from "./../Actions/";
 import { CoinItem, CustomButton } from "./../components";
 
 const styles = StyleSheet.create({
@@ -30,7 +30,7 @@ class CryptoContainer extends Component {
                             )
                         }
                     )}
-                    <CustomButton />
+                    <CustomButton handleClick={this.props.ShowMore}/>
                 </ScrollView>
             )
         } else {
@@ -43,11 +43,10 @@ class CryptoContainer extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log('map state to props', state);
     return {
         crypto: state.crypto,
         app: state.app
     }
 }
 
-export default connect(mapStateToProps, { FetchCoinData })(CryptoContainer)
+export default connect(mapStateToProps, { FetchCoinData, ShowMore })(CryptoContainer)

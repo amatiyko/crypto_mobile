@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'; 
 import { apiBaseUrl } from "./../utils/Constants";
 import {
     FETCHING_COIN_DATA,
